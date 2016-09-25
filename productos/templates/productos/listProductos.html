@@ -1,0 +1,9 @@
+{%for producto in productos%}
+
+<img src="/media/{{producto.imagen}}" height="100">
+<td><a href="{% url 'productos:detailProducto' producto.slug %}">{{producto.nombre}}</a></td>
+{{producto.precio}}
+
+{%empty%}
+
+{%endfor%}
