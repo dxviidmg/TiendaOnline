@@ -5,10 +5,12 @@ from carrito.forms import CartAddProductForm
 
 class ListProductos(View):
 	def get(self, request):
-		template_name="productos/listProductos.html"
+		template_name= "productos/listProductos.html"
+		categorias = Categoria.objects.all()
 		productos = Producto.objects.all()
 		context = {
-		'productos': productos
+		'productos': productos,
+		'categorias': categorias,
 		}
 		return render(request, template_name, context)
 

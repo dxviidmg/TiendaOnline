@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse
 
 class Categoria(models.Model):
 	nombre = models.CharField(max_length=30)
+	slug = models.SlugField()
 
 	def __str__(self):
 		return self.nombre
@@ -21,4 +22,3 @@ class Producto(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('producto:detailProducto', args=[self.slug])
-# Create your models here.
