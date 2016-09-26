@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns=[
-	url(r'^$',
+	url(r'^carrito',
 		views.DetalleCarrito.as_view(),
 		name="detalleCarrito"),
 

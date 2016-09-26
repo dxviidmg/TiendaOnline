@@ -7,7 +7,7 @@
 {%block content%}    
 
 	<h4>Tus compras:</h4>
-	<table>
+	<table class="table table-bordered">
 		<thead>
 		<tr class="grey lighten-4">
 			<th>Imagen</th>
@@ -23,7 +23,8 @@
 			{%with product=item.product%}
 			<tr>
 				<td>
-					<img src="/media/{{product.imagen}}" height="100">
+				<br>
+					<img src="/media/{{product.imagen}}" height="75">
 				</td>
 				<td>
 					{{product.nombre}}
@@ -63,7 +64,6 @@
 			Continuar Comprando
 		</a>
 	</p>
-
 	</section>
 
 {%endblock content%}

@@ -4,29 +4,20 @@
 
 {%block content%}    
 
-    
-
     {%for producto in productos%}
-
-
-<div class="card">
-    <img class="card-img-top" src="media/{{producto.imagen}}"  width="200" alt="Card image cap">
-    <div class="card-block">
-        <h4 class="card-title">{{producto.nombre}}</h4>
-        <p class="card-text">{{producto.precio}}</p>
-        <a href="{% url 'productos:detailProducto' producto.slug %}"><p>Mas informacion</p></a>
-
-        <form action="{%url 'carrito:agregaCarrito' producto.id%}" method="post">
-			{%csrf_token%}
-			{{form}}
-		<input class="btn btn-primary" type="submit" value="Agregar al carrito">
-
+    <br>
+    <div class="card">
+        <img class="card-img-top" src="media/{{producto.imagen}}"  width="200" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">{{producto.nombre}}</h4>
+            <p class="card-text">{{producto.precio}}</p>
+            <a href="{% url 'productos:detailProducto' producto.slug %}"><p>Mas información</p></a>
+            <form action="{%url 'carrito:agregaCarrito' producto.id%}" method="post">
+    			{%csrf_token%}
+    			{{form}}
+    		<input class="btn btn-primary" type="submit" value="Agregar al carrito">
+        </div>
     </div>
-</div>
-
-
-
-    
 
     {%empty%}
         <h2>Lista de productos vacia</h2>
