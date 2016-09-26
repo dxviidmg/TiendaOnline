@@ -1,0 +1,55 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{%block title%}{%endblock title%}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{%static 'css/estilos.css'%}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-deafult">
+            <div class="container">
+                <div class="navbar header">
+                    <ul class="nav navbar-nav navbar">
+                        <li>
+                            <h1>Mi Tienda</h1>
+                        </li>
+                      </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <br>
+                            <p>
+                                {%with total_items=cart|length%}
+                                {%if carṭ|length > 0%}
+                                Tu carrito:<a href="{%url 'carrito:detalleCarrito'%}">
+                                    {{total_items}} item{{total_items|pluralize}}, $ {{cart.get_total_price}}
+                                </a>
+                                {%else%}
+                                <p>Tu carrito esta vacio</p>
+                                {%endif%}
+                                {%endwith%}
+                            </p>
+                        </li>
+                      </ul>
+                </div> <!-- fin div navbar header -->
+            </div> <!-- fin div container -->
+        </nav>
+    </header>
+    <div class="container">
+        <section class="main row">
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{%block content%}{%endblock content%}</article>
+        </section>
+    </div>
+    <footer>
+        <div class="container">
+            <h4>Hecho por David Mejia</h4>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
+</body>
+</html>
+
