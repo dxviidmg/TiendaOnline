@@ -8,9 +8,12 @@ class ListProductos(View):
 		template_name= "productos/listProductos.html"
 		categorias = Categoria.objects.all()
 		productos = Producto.objects.all()
+		form = CartAddProductForm()
+
 		context = {
 		'productos': productos,
 		'categorias': categorias,
+		'form':  form,
 		}
 		return render(request, template_name, context)
 

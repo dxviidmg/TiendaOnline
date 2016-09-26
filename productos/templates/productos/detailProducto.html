@@ -13,6 +13,6 @@
 	<form action="{%url 'carrito:agregaCarrito' producto.id%}" method="post">
 		{%csrf_token%}
 		{{form}}
-	<input class="btn grey wave-effect" type="submit" value="Agregar al carrito">
+	<input class="btn btn-primary" type="submit" value="Agregar al carrito">
 
 {%endblock content%}    
