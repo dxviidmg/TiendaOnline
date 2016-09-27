@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10"><H1>Mi Tienda</H1></div>
+                <div class="col-xs-12 col-sm-9 col-md-10 col-lg-10"><h1>Mi Tienda</h1></div>
                 <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
                     <p>
                         {%with total_items=cart|length%}
@@ -41,9 +41,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="{%url 'main:nosotros'%}">¿Quienes somos?</a></li>
                         <li><a href="{%url 'productos:listProductos'%}">Productos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="{%url 'main:contacto'%}">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -59,27 +59,6 @@
             </article>
         </div>
     </div>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><p align="center">Todos los derechos reservados</p></div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"><p align="center">Hecho por David Mejia</p></div>
-        </div>
-        </div>
-    </footer>
-    
-       
-            
-
-
-
-
-
-                
-            
-    
-    
 
     <script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
     <script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
